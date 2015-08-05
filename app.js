@@ -10,6 +10,8 @@ var routes = require('./routes/index');
 var pizza = require('./routes/pizza');
 var chickenNuggets = require('./routes/chickennuggets');
 
+require('./lib/secrets');
+
 var app = express();
 
 app.set('view engine', 'ejs');
@@ -29,14 +31,14 @@ var logStream = fs.createWriteStream('access.log', {flags: 'a'});
 app.use(morgan('combined', {stream: logStream}));
 app.use(morgan('dev'));
 
-var client = loggly.createClient({
-  token: '59511982-7b6a-4995-9119-eb07bcfe17c9',
-  subdomain: 'ldmcdaniel',
-  tags: ['NodeJS'],
-  json: true
-});
+// var client = loggly.createClient({
+//   token: '59511982-7b6a-4995-9119-eb07bcfe17c9',
+//   subdomain: 'ldmcdaniel',
+//   tags: ['NodeJS'],
+//   json: true
+// });
 
-client.log("Hello World!");
+// client.log("Hello World!");
 
 app.use(express.static('public'));
 

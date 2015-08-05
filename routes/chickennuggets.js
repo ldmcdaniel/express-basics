@@ -7,8 +7,7 @@ router.get('/', function (req, res) {
 
 router.post('/order', function (req, res) {
   console.log(req.body);
-  // res.send('Thank you for ordering!');
-  res.redirect('/');
+  res.redirect('/')
 });
 
 module.exports = router;

@@ -14,6 +14,7 @@ router.get('/', function (req, res) {
         name:       order.name,
         flavor:     order.style,
         qty:        order.qty,
+        complete:   order.complete,
         createdAt:  moment(order._id.getTimestamp()).fromNow()
       }
     });

@@ -11,8 +11,10 @@ var chickennuggets = require('./routes/chickennuggets');
 var imgur = require('./routes/imgur');
 
 var app = express();
+if (process.env.NODE_ENV !== 'production') {
+  require('./lib/secrets');
+}
 
-require('./lib/secrets');
 require('./lib/mongodb');
 
 app.set('view engine', 'ejs');
@@ -71,6 +73,6 @@ app.use(function (err, req, res, next) {
 var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
-
+  console.log(process.env);
   console.log('Example app listening at http://%s:%d', host, port);
 });

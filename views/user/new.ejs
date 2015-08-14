@@ -1,0 +1,16 @@
+<%- include('../templates/head', {page: 'Register'}) %>
+  <body>
+    <h1>Sign Up</h1>
+    <form class="pure-form pure-form-stacked" action="/user" method="post">
+      <fieldset>
+        <label for="email">Email</label>
+        <input type="emal" name="email">
+        <label for="password">Password</label>
+        <input type="password" name="password">
+        <label for="password">Password Confirmation</label>
+        <input type="password" name="password_confirm">
+        <input class="pure-button pure-button-primary" type="submit" value="register">
+      </fieldset>
+    </form>
+  </body>
+</html>

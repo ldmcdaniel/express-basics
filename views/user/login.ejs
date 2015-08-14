@@ -1,0 +1,14 @@
+<%- include('../templates/head', {page: 'Login'}) %>
+  <body>
+    <h1>Login</h1>
+    <form class="pure-form pure-form-stacked" action="/user/login" method="post">
+      <fieldset>
+        <label for="email">Email</label>
+        <input type="emal" name="email">
+        <label for="password">Password</label>
+        <input type="password" name="password">
+        <input class="pure-button pure-button-primary" type="submit" value="Login">
+      </fieldset>
+    </form>
+  </body>
+</html>

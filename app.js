@@ -13,6 +13,8 @@ var imgur = require('./routes/imgur');
 var user = require('./routes/user');
 
 var app = express();
+
+
 if (process.env.NODE_ENV !== 'production') {
   require('./lib/secrets');
 }
@@ -23,6 +25,7 @@ app.set('view engine', 'ejs');
 app.set('case sensitive routing', true);
 
 app.locals.title = 'aweso.me';
+
 
 app.use(session({
   secret: 'expressbasicsisareallyawesomeapp',
@@ -39,17 +42,35 @@ app.use(morgan('dev'));
 
 var port = process.env.PORT || 3000;
 
-app.use('/user', user);
+app.use(function getAuthStatus(req, res, next) {
+  // if (req.session.user) {
+  //   res.locals.user = req.session.user;
+  // } else {
+  //   res.locals.user = null;
+  // }
+  res.locals.user = req.session.user || null;
+  next();
+})
+
 app.use('/', routes);
+app.use('/user', user);
 app.use(express.static('www'));
 
 app.use(function requireAuth (req, res, next) {
-  if (req.session.userId) {
+  if (req.session.user) {
     next();
   } else {
     res.redirect('/user/login')
   }
 })
+
+app.use('/pizza', pizza);
+app.use('/chickennuggets', chickennuggets);
+app.use('/imgur', imgur);
+
+app.use(function (req, res) {
+  res.status(403).send('Unauthorized!');
+});
 
 app.use(function (req, res, next) {
   var client = require('./lib/loggly')('incoming');
@@ -62,14 +83,6 @@ app.use(function (req, res, next) {
     method: req.method
   });
   next();
-});
-
-app.use('/pizza', pizza);
-app.use('/chickennuggets', chickennuggets);
-app.use('/imgur', imgur);
-
-app.use(function (req, res) {
-  res.status(403).send('Unauthorized!');
 });
 
 // app.use(function (err, req, res, next) {
@@ -95,3 +108,5 @@ var server = app.listen(port, function () {
   console.log(process.env);
   console.log('Example app listening at http://%s:%d', host, port);
 });
+
+module.exports = app;

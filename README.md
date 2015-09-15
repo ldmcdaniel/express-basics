@@ -48,10 +48,10 @@ db.createCollection("chickenNuggets")
 use chickenNuggets
 ```
 
-*In another terminal window:*
+*In yet another terminal window:*
 
 `node app.js`
 
-*Go to this url in the browser:*
+*Go to [this url] (http://localhost:3000/chickenNuggets) in the browser:*
 
-> http://localhost:3000/chickenNuggets
+>

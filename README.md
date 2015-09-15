@@ -16,8 +16,7 @@ NPM, Node.js, Express.js, bcrypt, Body-parser, Cookie-session, EJS, Express-sess
 
 `curl https://npmjs.org/install.sh | sh`
 
-*In your browser, navigate to:*
-> https://github.com/ldmcdaniel/express-basics
+In your browser, navigate [to the repo] (https://github.com/ldmcdaniel/express-basics).
 
 *In the top-right corner of the page, click Fork.*
 
@@ -30,7 +29,7 @@ npm install
 bower install
 ```
 
-> http://docs.mongodb.org/master/installation
+Install [MongoDB] (http://docs.mongodb.org/master/installation)
 
 _Then, in terminal:_
 
@@ -38,13 +37,10 @@ _Then, in terminal:_
 
 *In another terminal window:*
 
-```
+```sh
 mongo
-
 use express_basics
-
 db.createCollection("chickenNuggets")
-
 use chickenNuggets
 ```
 
@@ -52,6 +48,6 @@ use chickenNuggets
 
 `node app.js`
 
-*Go to [this url] (http://localhost:3000/chickenNuggets) in the browser:*
+Go to [this url] (http://localhost:3000/chickenNuggets) in the browser:
 
 >

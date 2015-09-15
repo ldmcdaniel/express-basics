@@ -37,22 +37,22 @@ NPM, Node.js, Express.js, bcrypt, Body-parser, Cookie-session, EJS, Express-sess
 
 _Then, in terminal:_
 
-````mongod````
+```mongod```
 
 *In another terminal window:*
 
-````mongo````
+```mongo
 
-````use express_basics````
+use express_basics
 
-````db.createCollection("chickenNuggets")````
+db.createCollection("chickenNuggets")
 
-````use chickenNuggets````
+use chickenNuggets```
 
 *In another terminal window:*
 
-````nodemon app.js````
+```nodemon app.js```
 
 *Go to this url in the browser:*
 
-````http://localhost:3000/chickenNuggets````
+>http://localhost:3000/chickenNuggets

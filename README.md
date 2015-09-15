@@ -31,7 +31,7 @@ NPM, Node.js, Express.js, bcrypt, Body-parser, Cookie-session, EJS, Express-sess
 
 ````bower install````
 
-*Install MongoDB following these directions:*
+###Install MongoDB following these directions:
 
 >http://docs.mongodb.org/master/installation/
 

@@ -18,9 +18,9 @@ NPM, Node.js, Express.js, bcrypt, Body-parser, Cookie-session, EJS, Express-sess
 
 In your browser, navigate [to the repo] (https://github.com/ldmcdaniel/express-basics).
 
-*In the top-right corner of the page, click Fork.*
+In the top-right corner of the page, click Fork.
 
-*In your designated code directory, from Terminal:*
+In your designated code directory, from Terminal:
 
 ```sh
 git clone https://github.com/Your-Username/express-basics
@@ -31,11 +31,11 @@ bower install
 
 Install [MongoDB] (http://docs.mongodb.org/master/installation)
 
-_Then, in terminal:_
+Then, in terminal:
 
 `mongod`
 
-*In another terminal window:*
+In another terminal window:
 
 ```sh
 mongo
@@ -44,10 +44,8 @@ db.createCollection("chickenNuggets")
 use chickenNuggets
 ```
 
-*In yet another terminal window:*
+In yet another terminal window:
 
 `node app.js`
 
-Go to [this url] (http://localhost:3000/chickenNuggets) in the browser:
-
->
+Go to [this url] (http://localhost:3000/chickenNuggets) in the browser to view the app.
